@@ -1,12 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+/*
+  入口js文件
+ */
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import React from "react";
+import ReactDOM from 'react-dom'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import App from "./App"
+import storageUtils from "./utils/storageUtils"
+import memoryUtils from "./utils/memoryUtils"
+
+// 读取local中的数据保存到内存中
+const user = storageUtils.getUser()
+memoryUtils.user = user
+
+// 将App组件渲染到index页面的root标签下
+ReactDOM.render(<App/>, document.getElementById('root'))
