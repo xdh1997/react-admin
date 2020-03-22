@@ -130,7 +130,7 @@ export default class ProductHome extends Component {
       </span>
     )
 
-    // Card头部右侧
+    // Card头部右侧---> 添加商品
     const extra = (
       <span>
         <Button type='primary' onClick={() => this.props.history.push('/product/add-update')}>
